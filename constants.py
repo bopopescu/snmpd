@@ -1,5 +1,5 @@
-#can be useful
-SERTCPCMD = './scripts/snmpd/serial_to_tcp.py'
+
+SERTCPCMD = './serial_to_tcp.py'
 SERIAL_LOGFILE = "SerialHTTP.log"
 SNMP_LOGFILE = 'snmpd.log'
 #debug.setLogger(debug.Debug('all'))
@@ -13,3 +13,20 @@ SERIAL_TTY = '/dev/ttymxc'
 LOG_BACKUP_COUNT = 5
 LOG_SIZE = 10000
 DEBUG = 'mibview'
+
+"""
+Debug flags
+--------------
+io
+dsp
+msgproc
+secmod
+mibbuild
+mibview
+mibinstrum
+acl
+proxy
+app
+all
+--------------
+"""

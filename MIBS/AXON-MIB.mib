@@ -1,0 +1,64 @@
+AXON-MIB DEFINITIONS ::= BEGIN
+
+IMPORTS
+         OBJECT-TYPE, OCTET STRING  
+         FROM SNMPv2-SMI;
+
+-- http://www.mibdepot.com/cgi-bin/vendor_index.cgi?r=digi
+-- diProduct	    SCALAR	1.3.6.1.4.1.332.11.6.1.1.0	        iso(1). org(3). dod(6). internet(1). private(4). enterprises(1). digiEnterprise(332). digiProducts(11). digiConnect(6). digiDeviceInfo(1). diProduct(1). 0
+-- generalType	    SCALAR	1.3.6.1.4.1.332.11.5.3.3.20.12.0	iso(1). org(3). dod(6). internet(1). private(4). enterprises(1). digiEnterprise(332). digiProducts(11). digiTerminalServers(5). digiPortServers(3). digiPortServerTS(3). general(20). generalType(12). 0
+-- generalModel	    SCALAR	1.3.6.1.4.1.332.11.5.3.3.20.11.0	iso(1). org(3). dod(6). internet(1). private(4). enterprises(1). digiEnterprise(332). digiProducts(11). digiTerminalServers(5). digiPortServers(3). digiPortServerTS(3). general(20). generalModel(11). 0
+-- digiEnterprise MODULE-IDENTITY
+--         LAST-UPDATED "9809281000Z"
+--         ORGANIZATION "DIGI QL AXON"
+--         CONTACT-INFO "QL"
+--         DESCRIPTION "For managing information of AXON Product"
+--         REVISION "201809040000Z"
+--         DESCRIPTION "For managing information of AXON Product"
+--         ::= {enterprises 332}
+
+internet OBJECT IDENTIFIER ::= { iso(1) org(3) dod(6) 1 } 
+enterprises OBJECT IDENTIFIER ::= { internet private(4) 1 } 
+digiEnterprise       OBJECT IDENTIFIER ::= {enterprises 332}
+digiProducts         OBJECT IDENTIFIER ::= {digiEnterprise 11}
+
+digiConnect          OBJECT IDENTIFIER ::= {digiProducts 6}
+digiDeviceInfo       OBJECT IDENTIFIER ::= {digiConnect 1}
+-- diProduct            OBJECT IDENTIFIER ::= {digiDeviceInfo 1}
+
+
+
+digiTerminalServers  OBJECT IDENTIFIER ::= {digiProducts 5}
+digiPortServers      OBJECT IDENTIFIER ::= {digiTerminalServers 3}
+digiPortServerTS     OBJECT IDENTIFIER ::= {digiPortServers 3}
+general              OBJECT IDENTIFIER ::= {digiPortServers 20}
+
+-- generalType          OBJECT IDENTIFIER ::= {general 12}
+-- generalModel          OBJECT IDENTIFIER ::= {general 11}
+
+-- DIGIES_SNMP_OID_MODEL
+digiEsSnmpOidModel OBJECT-TYPE
+    SYNTAX OCTET STRING
+    MAX-ACCESS read-only
+    STATUS current
+    DESCRIPTION "Terminal Server for Axon model"
+    ::= {digiDeviceInfo 1}
+
+
+-- DIGI_SNMP_OID_TYPE
+digiSnmpOidType OBJECT-TYPE
+    SYNTAX OCTET STRING
+    MAX-ACCESS read-only
+    STATUS current
+    DESCRIPTION "Axon Model"
+    ::= {general 12}
+
+-- DIGI_SNMP_OID_MODEL
+digiSnmpOidModel OBJECT-TYPE
+    SYNTAX OCTET STRING
+    MAX-ACCESS read-only
+    STATUS current
+    DESCRIPTION "Error"
+    ::= {general 11}
+
+END

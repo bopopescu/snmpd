@@ -1,0 +1,24 @@
+AXON-MIB DEFINITIONS ::= BEGIN
+
+IMPORTS
+         OBJECT-TYPE, OCTET STRING, Integer32
+                     FROM SNMPv2-SMI
+   ;
+
+
+internet OBJECT IDENTIFIER ::= { iso(1) org(3) dod(6) 1 }
+enterprises OBJECT IDENTIFIER ::= { internet private(4) 1 }
+
+digiEnterprise       OBJECT IDENTIFIER ::= {enterprises 332}
+digiProducts         OBJECT IDENTIFIER ::= {digiEnterprise 11}
+
+digiConnect          OBJECT IDENTIFIER ::= {digiProducts 6}
+digiDeviceInfo       OBJECT IDENTIFIER ::= {digiConnect 1}
+
+digiEsSnmpOidModel OBJECT-TYPE
+    SYNTAX Integer32
+    MAX-ACCESS read-only
+    STATUS current
+    DESCRIPTION "Terminal Server for Axon model"
+    ::= {digiDeviceInfo 1}
+END
