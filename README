@@ -1,0 +1,2 @@
+Install python-pysnmp package of Linux 
+ $ apt-get install python-pysnmp
