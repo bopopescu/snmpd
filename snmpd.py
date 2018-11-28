@@ -90,7 +90,7 @@ class SerialHTTPProcess(object):
                                          self.get_data("{0}_{1}".format(port, 'baud')),
                                          self.get_data("{0}_{1}".format(port, 'dbits'))
                                          ))
-        self.run(self,
+        self.run(port,
                  LOCALPORT= lport,
                  PARITY={'1': 'N',
                          '2': 'O',
