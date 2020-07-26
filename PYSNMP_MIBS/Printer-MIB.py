@@ -145,7 +145,7 @@ if mibBuilder.loadTexts: prtConsoleDisable.setDescription("This value indicates 
 prtAuxiliarySheetStartupPage = MibTableColumn((1, 3, 6, 1, 2, 1, 43, 5, 1, 1, 14), PresentOnOff()).setMaxAccess("readwrite")
 if mibBuilder.loadTexts: prtAuxiliarySheetStartupPage.setDescription("Used to enable or disable printing a startup page.  If enabled,\na startup page will be printed shortly after power-up, when the\ndevice is ready.  Typical startup pages include test patterns\nand/or printer configuration information.")
 prtAuxiliarySheetBannerPage = MibTableColumn((1, 3, 6, 1, 2, 1, 43, 5, 1, 1, 15), PresentOnOff()).setMaxAccess("readwrite")
-if mibBuilder.loadTexts: prtAuxiliarySheetBannerPage.setDescription("Used to enable or disable printing banner pages at the\nbeginning of jobs.  This is a master switch which applies to all\njobs, regardless of interpreter.")
+if mibBuilder.loadTexts: prtAuxiliarySheetBannerPage.setDescription("Used to enable or disable printing banner pages at the\nbeginning of jobs.  This is a main switch which applies to all\njobs, regardless of interpreter.")
 prtGeneralPrinterName = MibTableColumn((1, 3, 6, 1, 2, 1, 43, 5, 1, 1, 16), OctetString().subtype(subtypeSpec=ValueSizeConstraint(0, 127))).setMaxAccess("readwrite")
 if mibBuilder.loadTexts: prtGeneralPrinterName.setDescription("An administrator-specified name for this printer.  Depending\nupon implementation of this printer, the value of this object\nmay or may not be same as the value for the MIB-II 'SysName'\nobject.")
 prtGeneralSerialNumber = MibTableColumn((1, 3, 6, 1, 2, 1, 43, 5, 1, 1, 17), OctetString().subtype(subtypeSpec=ValueSizeConstraint(0, 255))).setMaxAccess("readwrite")
